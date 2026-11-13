@@ -37,3 +37,35 @@
 @media(max-width:900px){.plan-grid{grid-template-columns:1fr;max-width:620px}.plan-card{padding:28px}.plan-summary{min-height:0}.plans-heading{margin-bottom:32px}.game-frame{height:clamp(580px,72vh,740px);min-height:580px}.shop{height:clamp(300px,39vh,370px)}}
 @media(max-width:700px){.walk-copy{margin:25px 8px 0}.walk-copy h1{font-size:clamp(36px,10vw,53px);line-height:1.02}.walk-hero-actions{align-items:flex-start;flex-direction:column;gap:9px;margin-top:18px}.game-frame{height:580px;min-height:580px;margin:14px -10px 0}.store-world{inset:7% 0 13%}.shop{top:46%;height:300px;width:clamp(160px,48vw,210px)}.enter-hint{top:7px;font-size:8px;padding:5px 8px}.walk-start-overlay{top:48%;max-height:calc(100% - 90px)}.walk-bottom{margin-top:10px}.plans-section{padding:72px 17px}.plans-heading h2{font-size:clamp(34px,9vw,46px)}.plans-heading>p{font-size:12px}.plan-grid{gap:15px}.plan-card{padding:22px;border-radius:19px}.plan-card h3{font-size:25px}.plan-card li{font-size:12px}.plans-footnote{font-size:10px}.merchant-section{padding-top:70px;padding-bottom:70px}}
 @media(max-width:390px){.game-frame{height:550px;min-height:550px}.walk-hero-actions .hero-link{margin-left:2px}.plan-card{padding:19px}}
+
+
+/* CIUDIX 25 vitrinas: fachadas anchas, solapamiento controlado y sin marquesina */
+.shop{width:clamp(280px,26vw,430px);height:clamp(360px,52vh,500px);}
+.shop-face{inset:8px 8px 0;border-radius:10px 10px 0 0;}
+.shop-photo{inset:0;background-position:center 42%;opacity:1;}
+.shop-face:after{background:linear-gradient(180deg,rgba(7,11,32,.02) 0%,rgba(7,11,32,.02) 48%,rgba(8,12,34,.18) 64%,rgba(8,12,34,.97) 100%);}
+.neon-sign{top:8%;left:5%;right:5%;padding:12px 9px;font-size:clamp(12px,1.05vw,16px);}
+.shop-entrance{display:none;}
+.shop-frame{border-radius:12px 12px 0 0;}
+.shop-label{padding:17px 15px 14px;gap:6px;}
+.shop-label small{font-size:9px;}
+.shop-label strong{font-size:clamp(17px,1.5vw,23px);}
+.shop-label span{font-size:12px;}
+.shop.is-current{filter:saturate(1.16) drop-shadow(0 0 30px color-mix(in srgb,var(--glow,#42d9ff) 30%,transparent));}
+.shop:not(.is-current){filter:saturate(.78) brightness(.78);}
+.shop-awning{display:none!important;}
+@media(min-width:1500px){.shop{width:clamp(370px,25vw,450px);height:clamp(430px,54vh,520px);}}
+@media(max-width:1050px) and (min-width:701px){.shop{width:clamp(260px,31vw,350px);height:clamp(350px,48vh,430px);}}
+@media(max-width:700px){
+  .game-frame{height:530px;min-height:530px;margin:14px -10px 0;overflow:hidden;}
+  .store-world{inset:5% 0 14%;}
+  .shop{width:min(76vw,300px);height:350px;top:46%;}
+  .shop-label{padding:11px 9px 10px;gap:4px;}
+  .shop-label small{font-size:7px;}
+  .shop-label strong{font-size:16px;}
+  .shop-label span{font-size:9px;}
+  .neon-sign{font-size:10px;padding:8px 5px;top:7%;}
+  .shop-face{inset:6px 6px 0;}
+  .player-hud{bottom:8px;}
+}
+@media(max-width:390px){.shop{width:min(78vw,270px);height:320px;}.game-frame{height:500px;min-height:500px;}}
