@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b20">
+  <meta name="description" content="CIUDIX: recorre el pasillo digital de tu ciudad, descubre negocios y encuentra todo desde tu celular. Dale a tu marca una vitrina que todos quieran visitar.">
+  <title>CIUDIX — Toda tu ciudad en un solo lugar</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://wa.me">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="CIUDIX inicio"><img src="assets/ciudix-logo.png" alt="CIUDIX — Toda tu ciudad en un solo lugar"></a>
+    <nav class="desktop-nav" id="mainNav" aria-label="Navegación principal">
+      <a href="#pasillo">Recorrer la ciudad</a><a href="#explorar">Explorar vitrinas</a><a href="#marcas">Para marcas</a><a href="#planes">Planes</a>
+    </nav>
+    <div class="top-actions">
+      <a class="whatsapp-top" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><span class="wa-mark" aria-hidden="true">◔</span><span>Hablemos</span></a>
+      <button class="menu-button" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="walk-hero" id="pasillo" aria-label="Pasillo comercial digital CIUDIX">
+      <div class="hero-vignette"></div><div class="hero-stars"></div>
+      <div class="walk-topline"><span class="live-dot"></span> CIUDIX CITY <span class="topline-divider">/</span> TU CIUDAD, EN MODO EXPLORACIÓN</div>
+      <div class="walk-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> EL COMERCIO CAMBIA DE DIMENSIÓN</p>
+        <h1>La ciudad entera.<br><span>En la palma de tu mano.</span></h1>
+        <p class="walk-intro">Entra al pasillo digital. Descubre marcas, encuentra lugares y déjate sorprender por lo que tienes cerca.</p>
+        <div class="walk-hero-actions"><button class="primary-button" id="startWalk">Recorrer el pasillo <span>↘</span></button><a class="hero-link" href="#explorar">Buscar algo en la ciudad <span>⌕</span></a></div>
+      </div>
+      <div class="game-frame" id="gameFrame" tabindex="0" aria-label="Pasillo digital interactivo. Usa flechas izquierda y derecha para recorrer las vitrinas.">
+        <div class="game-sky"></div><div class="game-backwall"></div><div class="city-horizon"></div><div class="game-floor"></div><div class="floor-grid"></div><div class="floor-reflection"></div>
+        <div class="side-neon side-neon-left"></div><div class="side-neon side-neon-right"></div>
+        <div class="level-label"><span class="level-dot"></span> PASEO COMERCIAL <b>01 / CIUDAD</b></div>
+        <div class="direction-sign sign-left">← ANTERIOR</div><div class="direction-sign sign-right">SIGUIENTE →</div>
+        <div class="store-world" id="storeWorld"></div>
+        <button class="walk-arrow walk-arrow-left" id="moveLeft" aria-label="Vitrina anterior">←</button><button class="walk-arrow walk-arrow-right" id="moveRight" aria-label="Siguiente vitrina">→</button>
+        <div class="player-hud"><div class="hud-current"><small>VITRINA EN FOCO</small><b id="currentStoreName">El pasillo de CIUDIX</b></div><div class="progress-wrap"><span id="progressLabel">01 / 08</span><div class="progress-track"><span id="progressBar"></span></div></div><div class="keyboard-hint"><kbd>←</kbd><kbd>→</kbd><span>RECORRER</span></div></div>
+        <div class="walk-start-overlay" id="walkStartOverlay"><div class="start-icon">↔</div><span class="overlay-kicker">TU PRÓXIMO DESCUBRIMIENTO</span><h3>¿Entramos?</h3><p>Muévete por el pasillo. Cada vitrina es un mundo por conocer.</p><button class="primary-button" id="beginExplore">Comenzar recorrido <span>→</span></button></div>
+      </div>
+      <div class="walk-bottom"><div class="walk-bottom-copy"><span class="scroll-cue">↓</span><span>Desliza, explora y entra a las vitrinas</span></div><div class="mobile-controls"><button id="mobileLeft" aria-label="Vitrina anterior">←</button><span>RECORRER</span><button id="mobileRight" aria-label="Siguiente vitrina">→</button></div><div class="walk-bottom-tag"><span>✦</span> UN NUEVO MUNDO COMERCIAL</div></div>
+    </section>
+
+    <section class="explore-section" id="explorar">
+      <div class="section-heading explore-heading"><div><span class="eyebrow">ENCUENTRA TU PRÓXIMO FAVORITO</span><h2>¿Qué estás buscando <span>hoy?</span></h2><p>Busca una marca, un producto o elige una categoría para descubrir las vitrinas.</p></div><div class="explore-count"><strong id="resultCount">08</strong><span>vitrinas de muestra</span></div></div>
+      <form class="search-bar" id="searchForm"><span class="search-symbol" aria-hidden="true">⌕</span><input id="mainSearch" type="search" placeholder="Ej. tenis, café, regalos, tecnología..." autocomplete="off" aria-label="Buscar tiendas, productos o lugares"><button type="submit">Buscar <span>→</span></button></form>
+      <div class="search-suggestions"><span>PRUEBA CON:</span><button type="button" data-search="moda">Moda</button><button type="button" data-search="comida">Comida</button><button type="button" data-search="café">Café</button><button type="button" data-search="tecnología">Tecnología</button><button type="button" data-search="regalos">Regalos</button></div>
+      <div class="category-header"><h3>Explora por categoría</h3><span>ELIGE TU CAMINO <span class="category-arrow">↘</span></span></div>
+      <div class="category-list" id="categoryList">
+        <button class="category-chip active" data-category="Todas"><span class="category-icon">✦</span><span>Todo</span></button>
+        <button class="category-chip" data-category="Moda"><span class="category-icon">◇</span><span>Moda</span></button>
+        <button class="category-chip" data-category="Comida"><span class="category-icon">✳</span><span>Comida y café</span></button>
+        <button class="category-chip" data-category="Hogar"><span class="category-icon">⌂</span><span>Hogar</span></button>
+        <button class="category-chip" data-category="Belleza"><span class="category-icon">✧</span><span>Belleza</span></button>
+        <button class="category-chip" data-category="Servicios"><span class="category-icon">⌘</span><span>Tecnología</span></button>
+        <button class="category-chip" data-category="Experiencias"><span class="category-icon">↗</span><span>Experiencias</span></button>
+      </div>
+      <div class="results-heading" id="resultsHeading"><div><span class="eyebrow">VITRINAS ABIERTAS</span><h2>Hay algo para <span>ti.</span></h2></div><button class="reset-filter" id="seeAll">Ver todas las vitrinas ↗</button></div>
+      <div class="store-grid" id="storeGrid" aria-live="polite"></div>
+      <p class="demo-note"><span>✦</span> Estas vitrinas son demostrativas. Muy pronto, tu negocio podría ser uno de los protagonistas de CIUDIX.</p>
+    </section>
+
+    <section class="merchant-section" id="marcas">
+      <div class="merchant-glow"></div><div class="merchant-copy"><span class="eyebrow"><span class="live-dot"></span> PARA MARCAS, NEGOCIOS Y EMPRENDEDORES</span><h2>No solo aparezcas.<br><span>Haz que te descubran.</span></h2><p>En CIUDIX construimos la presencia digital de tu negocio: diseñamos tu vitrina, organizamos tu catálogo, conectamos tus canales de contacto y mantenemos tu marca actualizada para que siempre tenga algo nuevo que mostrar.</p><div class="merchant-benefits"><span>✦ Tu marca, bien presentada</span><span>▦ Catálogo actualizado</span><span>⌖ Más visibilidad</span><span>◷ Agenda y consultas</span></div><a class="primary-button merchant-button" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20tener%20mi%20vitrina%20digital%20para%20mi%20negocio" target="_blank" rel="noopener">Quiero mi vitrina en CIUDIX <span>↗</span></a><small class="merchant-note">Cuéntanos sobre tu negocio y te contactaremos por WhatsApp.</small></div>
+      <div class="merchant-visual" aria-label="Ejemplo de vitrina digital de un negocio"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="showcase-window"><div class="showcase-top"><span class="window-dots">● ● ●</span><b>MI MARCA <span>EN CIUDIX</span></b><span class="window-arrow">↗</span></div><div class="showcase-photo"></div><div class="showcase-brand"><span class="brand-avatar">✦</span><div><b>TU NEGOCIO</b><small>Una vitrina para destacar</small></div><span class="verified-mark">✓</span></div><div class="showcase-products"><i></i><i></i><i></i></div><div class="showcase-bottom"><span>PRODUCTOS</span><span>PROMOCIONES</span><span>CONTACTO</span></div></div><div class="float-label float-label-one"><span>✦</span> Tu marca aquí</div><div class="float-label float-label-two"><span>↗</span> Más formas de encontrarte</div></div>
+    </section>
+
+    <section class="plans-section" id="planes">
+      <div class="plans-orb plans-orb-one"></div><div class="plans-orb plans-orb-two"></div>
+      <div class="plans-heading"><span class="eyebrow"><span class="live-dot"></span> TU NEGOCIO, EN OTRA DIMENSIÓN</span><h2>Tu marca tiene un lugar.<br><span>Elige cómo quieres brillar.</span></h2><p>No te entregamos solo una página: construimos, cuidamos y actualizamos tu presencia dentro del centro comercial digital de tu ciudad.</p></div>
+      <div class="plan-grid">
+        <article class="plan-card">
+          <div class="plan-card-top"><span class="plan-icon">✦</span><span class="plan-label">PARA EMPEZAR</span></div>
+          <h3>Vitrina Esencial</h3><p class="plan-summary">Tu negocio presente y listo para ser descubierto.</p>
+          <div class="plan-price">Presencia digital <small>Plan de entrada</small></div>
+          <ul><li>Diseño de vitrina con identidad de tu marca</li><li>Catálogo digital de productos o servicios</li><li>Información, ubicación y horarios</li><li>Botón directo a WhatsApp</li><li>Actualizaciones básicas de contenido</li></ul>
+          <a class="plan-cta" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20cotizar%20el%20plan%20Vitrina%20Esencial" target="_blank" rel="noopener">Quiero mi vitrina <span>↗</span></a>
+        </article>
+        <article class="plan-card plan-featured">
+          <div class="plan-ribbon">MÁS ELEGIDO</div><div class="plan-card-top"><span class="plan-icon">✧</span><span class="plan-label">PARA CRECER</span></div>
+          <h3>Vitrina Pro</h3><p class="plan-summary">Más contenido, más movimiento y más razones para entrar.</p>
+          <div class="plan-price">Marca en movimiento <small>Gestión continua</small></div>
+          <ul><li>Todo lo incluido en Vitrina Esencial</li><li>Catálogo ampliado con organización por categorías</li><li>Promociones, novedades y productos destacados</li><li>Agenda de citas, reservas o solicitudes</li><li>Actualización periódica de productos y contenido</li><li>Optimización de textos y presentación de marca</li></ul>
+          <a class="plan-cta" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20cotizar%20el%20plan%20Vitrina%20Pro" target="_blank" rel="noopener">Quiero crecer con CIUDIX <span>↗</span></a>
+        </article>
+        <article class="plan-card">
+          <div class="plan-card-top"><span class="plan-icon">⬡</span><span class="plan-label">PARA DESTACAR</span></div>
+          <h3>Vitrina Premium</h3><p class="plan-summary">Una experiencia de marca que invita a entrar y quedarse.</p>
+          <div class="plan-price">Máxima visibilidad <small>Plan personalizado</small></div>
+          <ul><li>Todo lo incluido en Vitrina Pro</li><li>Diseño visual personalizado para campañas</li><li>Mayor protagonismo en espacios destacados</li><li>Contenido para temporadas y fechas especiales</li><li>Gestión prioritaria de cambios y novedades</li><li>Asesoría para mejorar catálogo y presentación</li></ul>
+          <a class="plan-cta" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20informaci%C3%B3n%20del%20plan%20Vitrina%20Premium" target="_blank" rel="noopener">Quiero destacar mi marca <span>↗</span></a>
+        </article>
+      </div>
+      <div class="plans-footnote"><span>✦</span> Todos los planes se ajustan al tipo de negocio. Te ayudamos a construir tu marca, mantenerla actualizada y presentar tu catálogo, agenda y canales de contacto. <a href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20una%20propuesta%20para%20mi%20negocio" target="_blank" rel="noopener">Solicita una propuesta a tu medida ↗</a></div>
+    </section>
+
+    <section class="contact-strip" id="contacto"><div class="contact-mark">✳</div><div class="contact-copy"><span class="eyebrow">¿HABLAMOS?</span><h2>Tu ciudad tiene mucho por mostrar.</h2><p>Si tienes un negocio o quieres saber más de CIUDIX, estamos a un mensaje de distancia.</p></div><a class="whatsapp-button" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20el%20proyecto" target="_blank" rel="noopener"><span class="whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4ZM8.7 7.9c-.2-.5-.5-.5-.8-.5h-.6c-.2 0-.6.1-.9.5-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.1 3.3 5.2 4.5 2.5 1 3 .8 3.6.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.7-.4l-2-.9c-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6Z"/></svg></span><span><b>Escríbenos por WhatsApp</b><small>318 447 2253</small></span><span class="button-arrow">↗</span></a></section>
+  </main>
+
+  <footer class="footer"><div class="footer-main"><div class="footer-brand-block"><a class="footer-brand" href="#inicio"><img src="assets/ciudix-logo.png" alt="CIUDIX"></a><p>Toda tu ciudad en un solo lugar.</p><span>Una ciudad de posibilidades.</span></div><div class="footer-nav"><b>EXPLORA CIUDIX</b><a href="#pasillo">Recorrer el pasillo</a><a href="#explorar">Buscar vitrinas</a><a href="#marcas">Para negocios</a><a href="#planes">Planes CIUDIX</a></div><div class="footer-social"><b>SÍGUENOS EN EL UNIVERSO CIUDIX</b><p>Muy pronto nos encontramos también en redes.</p><div class="social-icons">
+      <span class="social-item facebook" title="Facebook — próximamente" aria-label="Facebook próximamente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg></span>
+      <span class="social-item instagram" title="Instagram — próximamente" aria-label="Instagram próximamente"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="insta-dot" cx="17.7" cy="6.7" r="1.1"/></svg></span>
+      <span class="social-item tiktok" title="TikTok — próximamente" aria-label="TikTok próximamente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.1 3h3c.2 1.8 1.2 3.3 3 4v3.1a9.2 9.2 0 0 1-3-1v6.4a6.1 6.1 0 1 1-6.1-6.1c.5 0 .9 0 1.3.1v3.3a2.9 2.9 0 1 0 1.8 2.7V3Z"/></svg></span>
+    </div><small class="coming-soon">FACEBOOK · INSTAGRAM · TIKTOK — PRÓXIMAMENTE</small></div></div><div class="footer-bottom"><small>© <span id="year"></span> CIUDIX. Todos los derechos reservados.</small><a href="https://wa.me/573184472253?text=Hola%20CIUDIX" target="_blank" rel="noopener">Contacto por WhatsApp ↗</a></div></footer>
+
+  <div class="modal-backdrop" id="storeModal" aria-hidden="true"><section class="store-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" data-close-modal aria-label="Cerrar">×</button><div class="modal-hero" id="modalHero"><span class="modal-category" id="modalCategory">VITRINA DESTACADA</span></div><div class="modal-body"><div class="modal-title-row"><div><span class="eyebrow">DESCUBRE EN CIUDIX</span><h2 id="modalTitle">Nombre de la tienda</h2><p id="modalDescription"></p></div><span class="store-rating">★ <b id="modalRating">4.9</b></span></div><div class="modal-meta" id="modalMeta"></div><h3>Descubre sus productos</h3><div class="modal-products" id="modalProducts"></div><a class="primary-button modal-contact" id="modalContact" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20informaci%C3%B3n%20sobre%20esta%20vitrina" target="_blank" rel="noopener">Consultar por WhatsApp <span>↗</span></a><small class="demo-note modal-demo-note">Vitrina de demostración. Los datos y productos son ilustrativos.</small></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a class="floating-whatsapp" href="https://wa.me/573184472253?text=Hola%20CIUDIX%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escribir a CIUDIX por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4ZM8.7 7.9c-.2-.5-.5-.5-.8-.5h-.6c-.2 0-.6.1-.9.5-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.1 3.3 5.2 4.5 2.5 1 3 .8 3.6.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.7-.4l-2-.9c-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6Z"/></svg></a>
+  <script src="js/app.js"></script>
+</body>
+</html>
